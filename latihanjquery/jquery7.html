@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button onclick="tampilkanJoke()">SILAHKAN DI LIHAT</button>
+    <br>
+    <br>
+    <div id="feed"></div>
+
+    <script>
+      function tampilkanJoke() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://v2.jokeapi.dev/joke/Any?type=single');
+        xhr.send();
+
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            console.log('success');
+            var apiresponse = JSON.parse(this.response);
+            console.log(apiresponse);
+            var displayjoke = document.createElement('div');
+            displayjoke.innerHTML = apiresponse.joke;
+            $('#feed').html(displayjoke);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

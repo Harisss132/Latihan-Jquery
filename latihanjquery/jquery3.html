@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan jquery ke 3</title>
+    <style>
+      .shape {
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        margin: 10px;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="koran" class="shape"></div>
+    <button id="tombol">tekan ini</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <h1 id="hello">HELLO WORLD</h1>
+    <button id="tombol1">Ubah Warna</button>
+    <script>
+      $(document).ready(function () {
+        $('#tombol').click(function () {
+          $('#koran').css('border-radius', '50%');
+        });
+
+        $('#tombol1').click(function () {
+          $('#hello').toggleClass('red');
+        });
+      });
+    </script>
+  </body>
+</html>

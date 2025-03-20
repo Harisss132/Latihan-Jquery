@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan jquery ke 5</title>
+    <style>
+      .kotak {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        margin: 10px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button>animation</button>
+    <div class="kotak"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('button').click(function () {
+          $('.kotak').animate({ height: '500px' });
+          $('.kotak').animate({ width: '500px' });
+          $('.kotak').animate({ height: '200px' });
+          $('.kotak').animate({ width: '200px' });
+          $('.kotak').animate({ height: '450px' });
+          $('.kotak').animate({ width: '450px' });
+          $('.kotak').animate({ left: '200px' });
+          $('.kotak').animate({ opacity: '0.5' });
+        });
+      });
+    </script>
+  </body>
+</html>
